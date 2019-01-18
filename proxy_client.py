@@ -5,10 +5,8 @@ HOST = "localhost"
 PORT = 8081
 BUFFER_SIZE = 1024
 
-payload = """GET / HTTP/1.0
-Host: {HOST}
-
-""".format(HOST=HOST)
+# had to change payload to this in order to not get a 404 error
+payload = "GET / HTTP/1.0\r\n\r\n"
 
 def conn_socket(addr_tup):
     (family, socktype, proto, canonname, sockaddr) = addr_tup
@@ -26,7 +24,7 @@ def conn_socket(addr_tup):
                 break
             full_data += data
 
-        print(full_data)
+        print("client data is: ", full_data)
     except e:
         print(e)
         pass

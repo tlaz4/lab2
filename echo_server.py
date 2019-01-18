@@ -26,7 +26,7 @@ def main():
                     if not data:
                         break
                     full_data += data
-                # print(full_data)
+                print("data is", full_data)
                 time.sleep(0.5)
                 conn.sendall(full_data)
 

@@ -35,6 +35,7 @@ def main():
     addr_info = socket.getaddrinfo(HOST, PORT, proto=socket.SOL_TCP)
     #print(addr_info)
     for addr_tup in addr_info:
+        print(addr_tup)
         conn_socket(addr_tup) 
         # only ipv4 I guess
         break
